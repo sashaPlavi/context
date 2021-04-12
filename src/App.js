@@ -1,20 +1,17 @@
- import React,{useState} from 'react'
+ import React from 'react'
  import FunctionContext from './FunctionContext'
+ import {ThemeProvider} from './ThemeContext'
 
  export const ThemeContext = React.createContext()
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(true)
-
-  function toggleTheme(){
-    setDarkTheme(prevDarkTheme => !prevDarkTheme)
-  }
+ 
   return (
-    <ThemeContext.Provider value={darkTheme}>
-      <button onClick={toggleTheme}> Toggle Theme</button>
+    <ThemeProvider>
        <FunctionContext/>
-    </ThemeContext.Provider>
+    </ThemeProvider>
   );
 }
+      
 
 export default App;
